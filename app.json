@@ -3,8 +3,8 @@
     "pages/index/index",
     "pages/category/category",
     "pages/cart/cart",
-    "pages/profile/profile"
-
+    "pages/my/my",
+    "pages/search/search"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff5777",
@@ -14,32 +14,34 @@
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
   },
-  "tabBar":{
-   "selectedColor":"#ff5777",
-   "list":[
+  "tabBar": {
+    "selectedColor": "#ff5777",
+    "list": [
       {
-        "pagePath":"pages/index/index",
-        "iconPath":"/assets/images/tabbar/home.png",
-        "selectedIconPath":"/assets/images/tabbar/home_active.png",
-        "text":"首页"
+        "pagePath": "pages/index/index",
+        "iconPath": "/assets/icons/home.png",
+        "selectedIconPath": "/assets/icons/home-o.png",
+        "text": "首页"
       },
       {
-        "pagePath":"pages/category/category",
-        "iconPath":"/assets/images/tabbar/category.png",
-        "selectedIconPath":"/assets/images/tabbar/category_active.png",
-        "text":"分类"
-      },{
-        "pagePath":"pages/cart/cart",
-        "iconPath":"/assets/images/tabbar/cart.png",
-        "selectedIconPath":"/assets/images/tabbar/cart_active.png",
-        "text":"购物车"
-      },{
-        "pagePath":"pages/profile/profile",
-        "iconPath":"/assets/images/tabbar/profile.png",
-        "selectedIconPath":"/assets/images/tabbar/profile_active.png",
-        "text":"我的"
+        "pagePath": "pages/category/category",
+        "iconPath": "/assets/icons/category.png",
+        "selectedIconPath": "/assets/icons/category-o.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "/assets/icons/cart.png",
+        "selectedIconPath": "/assets/icons/cart-o.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "/assets/icons/my.png",
+        "selectedIconPath": "/assets/icons/my-o.png",
+        "text": "我的"
       }
     ]
-   
-  }
+  },
+  "sitemapLocation": "sitemap10.json"
 }

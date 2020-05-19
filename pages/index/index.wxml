@@ -1,2 +1,11 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view>
+  <search></search>
+  <swiper>
+    <swiper-item>
+      <navigator>
+        <image src=""></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
