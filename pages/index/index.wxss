@@ -1,1 +1,37 @@
 /* pages/index/index.wxss */
+.index_swiper {
+  margin-top: 100rpx;
+  width: 750rpx;
+  height: 340rpx;
+}
+.index_swiper .imageContent{
+  width: 100%;
+}
+.nav{
+  display: flex;
+}
+.nav .nav-item{
+  flex: 1;
+}
+.title{
+  width:100%
+}
+.title image{
+  width: 100%;
+}
+.floor-item .first{
+  float: left;
+  width: 33.3%;
+}
+.first image{
+  width: 100%;
+}
+.floor::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 清除浮动 */
+/* .floor{
+  overflow:hidden;
+} */

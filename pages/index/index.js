@@ -6,26 +6,56 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    swiperList:[],
+    navList:[],
+    floorList:[]
   },
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+  // 原生请求方式
   //  wx.request({
   //    url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
   //    success:(res)=>{
   //      console.log(res)
   //    }
   //  })
-  request({
-    url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'
-  }).then(res=>{
-    console.log(res)
-  })
+  this.getSwiperData();
+  this.getNavData();
+  this.getFloorData();
   },
-
+  //轮播图数据
+  getSwiperData(){
+    request({ url: '/home/swiperdata'})
+    .then(res=>{
+      // console.log(res)
+      this.setData({
+       swiperList:res.data.message
+      })
+    })
+   },
+   //导航栏数据
+   getNavData(){
+     request({url:"/home/catitems"})
+     .then(res=>{
+      //  console.log(res);
+       this.setData({
+         navList:res.data.message
+       })
+     })
+    },
+    getFloorData(){
+      request({url:"/home/floordata"})
+      .then(res=>{
+        // console.log(res);
+        this.setData({
+          floorList:res.data.message,
+        })
+      })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

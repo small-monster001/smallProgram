@@ -1,11 +1,26 @@
 <!--pages/index/index.wxml-->
-<view>
   <search></search>
-  <swiper>
-    <swiper-item>
-      <navigator>
-        <image src=""></image>
+<view>
+  <swiper indicator-dots autoplay interval="3000" circular class="index_swiper">
+    <swiper-item wx:for="{{swiperList}}" wx:key="index">
+      <navigator url="{{item.navigator_url}}">
+        <image src="{{item.image_src}}" class="imageContent" mode="widthFix"></image>
       </navigator>
     </swiper-item>
   </swiper>
+  <view  class="nav">
+    <image wx:for="{{navList}}" wx:key="name" src="{{item.image_src}}" class="nav-item" mode="widthFix"></image>
+  </view>
+  <view class="floor" wx:for="{{floorList}}" wx:key="index">
+    <view class="title">
+      <image src="{{item.floor_title.image_src}}" mode="widthFix"></image>
+    </view>
+    <view class="floor-item">
+      <view class="first" wx:for="{{item.product_list}}" wx:key="name" wx:for-item="j">
+        <navigator url="../goods_list/index" open-type="{{j.open_type}}" >
+          <image src="{{j.image_src}}" mode="widthFix"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
 </view>
