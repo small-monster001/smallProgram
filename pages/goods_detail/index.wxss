@@ -1,0 +1,65 @@
+/* pages/goods_detail/index.wxss */
+.detail-swiper{
+  width:750rpx;
+  height:500rpx;
+  text-align: center;
+}
+.detail-swiper image{
+  width: 75%;
+}
+.price{
+  color: red;
+  margin-right: 10rpx;
+}
+.detail-desc{
+  display: flex;
+}
+.name{
+  width: 600rpx;
+  border-right: 2rpx solid black;
+}
+.collection{
+  flex: 1;
+}
+/* 底部导航栏开始 */
+.bottom-bar{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* z-index: 2; */
+  background-color: white;
+  height: 100rpx;
+  text-align: center;
+  border-top:2rpx solid grey;
+}
+.add{
+  background-color:orangered;
+  color: white;
+  line-height: 100rpx;
+}
+.buy{
+  background-color: red;
+  line-height: 100rpx;
+}
+.add,.buy{
+  flex: 2;
+}
+.servicer,.share,.shop{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 28rpx;
+  position: relative;
+}
+.servicer button,.share button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

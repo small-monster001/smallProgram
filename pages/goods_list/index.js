@@ -12,7 +12,7 @@ Page({
       query:'',
       cid:'',
       pagenum:1,
-      pagesize:20
+      pagesize:10
     },
     goodsList:[],
     totalPages:1
@@ -33,7 +33,7 @@ Page({
     this.getGoodsList();
   },
   getGoodsList(){
-    request({url:"/goods/search",data:this.goodsListParam})
+    request({url:"/goods/search",data:this.data.goodsListParam})
     .then(res=>{
       // console.log(res);
       this.data.totalPages=Math.ceil(res.data.message.total/this.data.goodsListParam.pagesize)

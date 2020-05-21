@@ -5,7 +5,8 @@
     "pages/cart/cart",
     "pages/my/my",
     "pages/search/search",
-    "pages/goods_list/index"
+    "pages/goods_list/index",
+    "pages/goods_detail/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff5777",

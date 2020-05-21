@@ -1,22 +1,18 @@
 <!--pages/goods_list/index.wxml-->
 <view>
-  <search></search>
-  <view class="control-tab">
-    <view 
-      wx:for="{{controlItem}}" 
-      wx:key="index"
-      bindtap="controlClick"
-      data-index="{{index}}"
-      class="control-item {{currentIndex===index?'active':''}}">{{item}}</view>
-  </view>
-  <view wx:for="{{goodsList}}" wx:key="index" class="goods-list-item">
-    <view class="small-picture">
-      <image mode="widthFix" src="{{item.goods_small_logo}}"></image>
-    </view>
-    <view class="desc">
-      <text>{{item.goods_name}}</text>  
-      <view class="price">￥{{item.goods_price}}</view>
-    </view>
-  
-  </view>
+	<search></search>
+	<view class="control-tab">
+		<view wx:for="{{controlItem}}" wx:key="index" bindtap="controlClick" data-index="{{index}}" class="control-item {{currentIndex===index?'active':''}}">{{item}}</view>
+	</view>
+	<view wx:for="{{goodsList}}" wx:key="index" class="goods-list-item">
+		<view class="small-picture">
+			<image mode="widthFix" src="{{item.goods_small_logo}}"></image>
+		</view>
+		<view class="desc">
+			<navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+				<text>{{item.goods_name}}</text>
+				<view class="price">￥{{item.goods_price}}</view>
+			</navigator>
+		</view>
+	</view>
 </view>

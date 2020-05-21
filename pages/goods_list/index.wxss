@@ -29,6 +29,7 @@
 .desc{
   flex: 1;
   padding-top: 30rpx;
+  margin-left: 20rpx;
 }
 .price{
   color: red;

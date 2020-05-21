@@ -1,1 +1,42 @@
 /* pages/cart/cart.wxss */
+.address{
+  height: 150rpx;
+  box-shadow: 0 10rpx 5px grey;
+  padding-top: 25rpx;
+}
+.address button{
+  width: 400rpx;
+}
+.title{
+  margin-right: 20rpx;
+  margin-top: 50rpx;
+  border-bottom: 2rpx solid grey;
+  font: 700;
+  font-size: 40rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.pay-bar{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+}
+.pay-bar .check,.pay-bar .total{
+  flex: 3;
+  text-align: center;
+}
+.pay-bar .check{
+  line-height: 100rpx;
+}
+.pay-bar .settlement{
+  flex: 2;
+  background-color: red;
+  text-align: center;
+  line-height: 100rpx;
+}
+/* .cart-check{
+  border-radius: 50%;
+} */
