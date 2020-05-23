@@ -23,6 +23,7 @@
   left: 0;
   right: 0;
   height: 100rpx;
+  background-color: white;
 }
 .pay-bar .check,.pay-bar .total{
   flex: 3;
@@ -34,9 +35,33 @@
 .pay-bar .settlement{
   flex: 2;
   background-color: red;
+  color: white;
   text-align: center;
   line-height: 100rpx;
 }
-/* .cart-check{
-  border-radius: 50%;
-} */
+.total .two {
+  color: red;
+}
+
+/* 购物车列表 */
+.cart-list-item{
+  display: flex;
+  border-bottom: 2rpx solid grey;
+}
+.cart-list-item .check{
+  position: relative;
+  top:100rpx;
+  
+}
+.cart-image{
+  height: 300rpx;
+}
+.cart-image image{
+  height: 100%;
+}
+.cart-price{
+  display: flex;
+}
+.num {
+  display: flex;
+}

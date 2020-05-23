@@ -1,0 +1,32 @@
+<!--pages/pay/index.wxml-->
+<view>
+  <view>
+     <view>收货人:{{addressInfo.name}}</view>
+    {{addressInfo.address}}  {{addressInfo.phone}}
+  </view> 
+  <view class="pay-title">
+    购物车
+  </view>
+  <view wx:for="{{checkCartList}}" wx:key="index" class="pay-item">
+    <view>
+      <image src="{{item.goods_small_logo}}" mode="widthFix"></image> 
+    </view>   
+    <view class="desc">
+      <view class="name">{{item.goods_name}}</view>
+      <view >
+        <view class="price">{{item.goods_price}}</view> 
+        <view class="num">X{{item.num}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="shop-pay">
+    <view>合计：</view>
+    <view>
+      <view>￥{{totalInfo.totalPrice}}</view>
+      <text>包含运费</text>
+    </view>
+    <view class="settlement">
+      支付({{totalInfo.num}})
+    </view>
+  </view>
+</view>

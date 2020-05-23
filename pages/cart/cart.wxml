@@ -1,18 +1,46 @@
 <!--pages/cart/cart.wxml-->
 <view>
-  <view class="address">
-    <button >+添加收货地址</button>  
+  <view class="address" wx:if="{{!isShowAddress}}">
+    <button bindtap="addAddress">+添加收货地址</button>  
+  </view>
+  <view class="address" wx:else>
+    <view>收货人:{{addressInfo.name}}</view>
+    {{addressInfo.address}}  {{addressInfo.phone}}
   </view>
   <view class="title">优购生活馆</view>
-  <view>
-      
+  <view wx:for="{{cartList}}" wx:key="goods_id" class="cart-list-item">     
+    <checkbox-group bindchange="handleCheckChange"  class="check" data-id="{{item.goods_id}}">
+      <checkbox checked="{{item.check}}"></checkbox>
+    </checkbox-group>
+    <view class="cart-image">
+      <image src="{{item.goods_small_logo}}" mode="heightFix"></image>
+    </view>
+    <view >
+      <view>{{item.goods_name}}</view>
+      <view class="cart-price">
+        <view>{{item.goods_price}}</view>  
+        <view class="num">
+          <button bindtap="handleSubCLick" data-id="{{item.goods_id}}">-</button>
+          <view>{{item.num}}</view>
+          <button bindtap="handleAddCLick"  data-id="{{item.goods_id}}">+</button>
+        </view>
+      </view>
+    </view>
   </view>
   <view class="pay-bar">
     <view class="check">
-      <checkbox class="cart-check"></checkbox>
+      <checkbox class="cart-check"  bindtap="handleTotalCLick"  checked="{{isTotal}}"></checkbox>
       全选
     </view>
-    <view class="total">合计</view>
-    <view class="settlement">结算</view>
+    <view class="total">
+      <text>合计:</text>
+      <text class="two">￥{{totalPrice}}</text> 
+      <view>包含运费</view>
+    </view>
+    <view class="settlement">
+      <navigator url="/pages/pay/index">
+        结算({{num}})
+      </navigator>
+    </view>
   </view>
 </view>

@@ -1,0 +1,38 @@
+/* pages/pay/index.wxss */
+.pay-title{
+  border-top: 2rpx solid red;
+  border-bottom: 2rpx solid red;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+}
+.pay-item{
+  display: flex;
+  border-bottom: 2rpx solid grey;
+}
+.pay-item image{
+  width: 240rpx;
+}
+.name{
+  margin: 20rpx 5rpx 40rpx 5rpx;
+}
+.price{
+  color: red;
+  float: left;
+}
+.num{
+  float: right;
+} 
+.shop-pay{
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  height: 100rpx;
+}
+.settlement{
+  background-color: red;
+  color: white;
+  text-align: center;
+  line-height: 100rpx;
+}

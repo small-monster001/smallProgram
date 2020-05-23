@@ -79,10 +79,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/cart/cart",
+					"id": 3,
+					"name": "购物车",
 					"pathName": "pages/cart/cart",
 					"query": "goods_id=57444",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "支付页面",
+					"pathName": "pages/pay/index",
+					"query": "",
 					"scene": null
 				}
 			]

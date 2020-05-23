@@ -34,8 +34,27 @@ Page({
     })
   },
   addToCart(){
-    wx.setStorageSync('cart', this.data.goodsDetail)
+    let cart=wx.getStorageSync('cart')||[];
+    let idList=cart.map(v=>{
+      return v.goods_id
+    })
+    let index=idList.findIndex(v=>v===this.data.goodsDetail.goods_id);
+    console.log(index)
+    if(index===-1){
+      this.data.goodsDetail.num=1;
+      this.data.goodsDetail.check=true;
+      cart.push(this.data.goodsDetail); 
+    }else{
+      cart[index].num++;
+    }
+    wx.setStorageSync('cart', cart);
+    wx.showToast({
+      title: '加入购物车成功',
+      icon: 'success',
+      duration: 100
+    })
   },
+ 
   // 请求详情页数据
   getGoodsDetail(){
     request({url:"/goods/detail",data:this.data.goodsDetailParam})

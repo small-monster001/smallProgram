@@ -6,7 +6,8 @@
     "pages/my/my",
     "pages/search/search",
     "pages/goods_list/index",
-    "pages/goods_detail/index"
+    "pages/goods_detail/index",
+    "pages/pay/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ff5777",
