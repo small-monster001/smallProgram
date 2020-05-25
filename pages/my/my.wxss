@@ -1,1 +1,23 @@
 /* pages/my/my.wxss */
+.login{
+  position:relative;
+  top: 50vh;
+  width: 300rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  text-align: center;
+  background-color: green;
+  color: white;
+}
+.userInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.avatar{
+  width: 300rpx;
+}
+.avatar image{
+  width: 100%;
+}

@@ -1,1 +1,8 @@
 /* pages/search/search.wxss */
+.search{
+  display: flex;
+}
+.search input{
+  border: 2rpx solid black;
+  width: 500rpx;
+}

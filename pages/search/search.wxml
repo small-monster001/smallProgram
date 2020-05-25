@@ -1,2 +1,5 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="search">
+  <input confirm-type="search" bindinput="handleinput"></input>
+  <button>取消</button>
+</view>

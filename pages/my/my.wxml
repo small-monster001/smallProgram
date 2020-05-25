@@ -1,2 +1,8 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="userInfo">
+  <view class="avatar">
+    <image src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+  </view>
+  {{userInfo.nickName}}
+</view>
+<button wx:if="{{!isLogin}}" class="login" open-type="getUserInfo" bindtap="handleLogin">登录</button>

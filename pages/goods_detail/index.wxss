@@ -20,6 +20,17 @@
 }
 .collection{
   flex: 1;
+  text-align: center;
+}
+.circle{
+  width: 50rpx;
+  height: 50rpx;
+  border:6rpx solid black;
+  border-radius:25rpx;
+  margin-left: 50rpx;
+}
+.active{
+  background-color: red;
 }
 /* 底部导航栏开始 */
 .bottom-bar{

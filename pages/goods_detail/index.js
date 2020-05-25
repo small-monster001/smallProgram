@@ -10,7 +10,8 @@ Page({
       goods_id:''
     },
     goodsDetail:{},
-    previewImage:[]
+    previewImage:[],
+    isCollect:false
   },
 
   /**
@@ -31,6 +32,25 @@ Page({
     wx.previewImage({
       current,
       urls
+    })
+  },
+  // 处理收藏函数
+  handlecollect(){
+    let {isCollect,goodsDetail}=this.data;
+    isCollect=!isCollect;
+    if(isCollect){
+      let collectionList=wx.getStorageSync('collectionList')||[];
+      collectionList.push(goodsDetail)
+      wx.setStorageSync('collectionList', collectionList)  
+    }else{
+      let collectionList= wx.getStorageSync('collectionList')  
+      let index=collectionList.findIndex(v=>v.goods_id===goodsDetail.goods_id);
+      collectionList.splice(index,1);
+      wx.setStorageSync('collectionList',collectionList)
+    }
+    
+    this.setData({
+      isCollect
     })
   },
   addToCart(){
@@ -59,12 +79,32 @@ Page({
   getGoodsDetail(){
     request({url:"/goods/detail",data:this.data.goodsDetailParam})
     .then((res)=>{
-      console.log(res.data.message);
+      // console.log(res.data.message);
       this.setData({
         goodsDetail:res.data.message,
         previewImage:res.data.message.pics
       })
+        
+      // console.log(res.data.message)
+      let collectionList=wx.getStorageSync('collectionList')||[];
+      let index=collectionList.findIndex(v=> {
+        // console.log(v.goods_id)
+        // console.log(res.data.message)
+        return v.goods_id===res.data.message.goods_id  
+      })
+      console.log(index)
+      if(index===-1){
+        this.setData({
+          isCollect:false
+        })
+      }else {
+        this.setData({
+          isCollect:true
+        }) 
+      } 
     })
+    // 处理收藏问题
+   
   },
  
 
@@ -72,7 +112,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   
+   
   },
 
   /**
@@ -88,7 +129,9 @@ Page({
   onUnload: function () {
 
   },
-
+  onReady:function(){
+   
+  },
   /**
    * 用户点击右上角分享
    */

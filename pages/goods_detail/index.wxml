@@ -8,7 +8,10 @@
   <view class="price">¥{{goodsDetail.goods_price}}</view>
   <view class="detail-desc">
     <view class="name">{{goodsDetail.goods_name}}</view>
-    <view class="collection">收藏</view>
+    <view class="collection">
+      收藏
+      <view class="circle {{isCollect?'active':' '}} " bindtap="handlecollect"></view>
+    </view>
   </view>
   <view>
     <rich-text nodes="{{goodsDetail.goods_introduce}}"></rich-text>
